@@ -1,4 +1,6 @@
-dirname = debug.getinfo(1, "S").source:sub(4):match("(.*[/\\])"):gsub("[/\\]", ".")
+local lfs = require('lfs')
+
+dirname = debug.getinfo(1, "S").source:sub(3):match(".*[/\\]"):gsub('[/\\]', '.') or ""
 
 local ToDo = require(dirname .. "utils.ToDo")
 local Utils = require(dirname .. "utils.utils")
